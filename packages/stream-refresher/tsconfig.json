@@ -1,0 +1,12 @@
+{
+	"extends": "lionconfig/tsconfig",
+	"compilerOptions": {
+		"outDir": "dist",
+		"baseUrl": ".",
+		"target": "ES2022",
+		"paths": {
+			"~/*": ["./src/*"]
+		}
+	},
+	"include": ["./src", "./typings"]
+}
