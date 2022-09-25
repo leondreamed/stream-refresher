@@ -17,7 +17,7 @@
 	"exports": "./src/index.ts",
 	"scripts": {
 		"build": "node-ts ./scripts/build.ts",
-		"start": "node-ts ./src/index.ts"
+		"start": "node-ts ./src/bin/start.ts"
 	},
 	"dependencies": {
 		"applescript-utils": "^0.1.22",

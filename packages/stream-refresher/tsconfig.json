@@ -4,7 +4,7 @@
 		"outDir": "dist",
 		"baseUrl": ".",
 		"moduleResolution": "node",
-		"module": "ES2015",
+		"module": "ES2022",
 		"paths": {
 			"~/*": ["./src/*"]
 		}

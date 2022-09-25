@@ -6,6 +6,10 @@ import {
 } from 'applescript-utils';
 
 import { cliclickElement } from '~/utils/cliclick.js';
+import {
+	startStreamingFromExistingBroadcast,
+	stopStreaming,
+} from '~/utils/stream.js';
 
 export async function clickManageBroadcast() {
 	const manageBroadcastButton = await waitForElementMatch('OBS', (element) =>
@@ -29,11 +33,15 @@ export async function clickSelectExistingBroadcast() {
 
 export async function checkIfExistingBroadcast() {
 	await clickSelectExistingBroadcast();
+
 	try {
-		await waitForElementMatch('OBS', (element) =>
-			element.path.some((part) => part.name.includes('Productivity Stream'))
+		const existingBroadcast = await waitForElementMatch(
+			'OBS',
+			(element) =>
+				element.path.some((part) => part.name.includes('Productivity Stream')),
+			{ timeout: 2000 }
 		);
-		return true;
+		return existingBroadcast;
 	} catch {
 		return false;
 	}
@@ -105,4 +113,9 @@ export async function createNewBroadcast() {
 		)
 	);
 	await cliclickElement(createBroadcastButton);
+}
+
+export async function restartBroadcast() {
+	await stopStreaming();
+	await startStreamingFromExistingBroadcast();
 }

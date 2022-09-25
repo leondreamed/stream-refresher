@@ -11,7 +11,7 @@ export async function cliclickElement(element: ElementReference) {
 	const startStreamingButtonProperties = (await runAppleScript(outdent`
 		tell application "System Events"
 			tell process "OBS"
-					properties of ${element.pathString}
+				properties of ${element.pathString}
 			end tell
 		end tell
 	`)) as { position: [number, number]; size: [number, number] };
