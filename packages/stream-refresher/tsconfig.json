@@ -3,7 +3,8 @@
 	"compilerOptions": {
 		"outDir": "dist",
 		"baseUrl": ".",
-		"target": "ES2022",
+		"moduleResolution": "node",
+		"module": "ES2015",
 		"paths": {
 			"~/*": ["./src/*"]
 		}

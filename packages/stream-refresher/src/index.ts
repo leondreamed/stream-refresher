@@ -1,7 +1,11 @@
 import { runAppleScript, waitForElementMatch } from 'applescript-utils';
 import { execa } from 'execa';
-import { scheduleJob } from 'node-schedule';
 import { outdent } from 'outdent';
+
+import { cliclickElement } from '~/utils/cliclick.js';
+import { stopStreaming } from '~/utils/stream.js';
+
+stopStreaming();
 
 async function clickStreamingButton(
 	args: { shouldStart: boolean } | { shouldStop: boolean }
@@ -37,6 +41,7 @@ async function clickStreamingButton(
 	await execa('cliclick', [`c:${x + width / 2},${y + height / 2}`]);
 }
 
+/*
 scheduleJob('30 6 * * *', async () => {
 	await clickStreamingButton({ shouldStop: true });
 	await clickStreamingButton({ shouldStart: true });
@@ -47,3 +52,4 @@ try {
 } catch {
 	// noop
 }
+*/
