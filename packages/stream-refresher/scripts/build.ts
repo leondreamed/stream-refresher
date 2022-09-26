@@ -11,6 +11,6 @@ await copyPackageFiles();
 await (caxa.default as any).default({
 	input: './dist',
 	output: './exe/Stream Refresher.app',
-	command: ['{{caxa}}/node_modules/.bin/node', '{{caxa}}/bin/index.js'],
+	command: ['{{caxa}}/node_modules/.bin/node', '{{caxa}}/bin/start.js'],
 	includeNode: true,
 });
