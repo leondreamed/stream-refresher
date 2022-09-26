@@ -14,10 +14,13 @@
 		"url": "https://github.com/leondreamed/stream-refresher.git"
 	},
 	"homepage": "https://github.com/leondreamed/stream-refresher#readme",
-	"exports": "./src/index.ts",
+	"exports": {
+		"import": "./index.js",
+		"require": "./index.cjs"
+	},
 	"scripts": {
-		"build": "node-ts ./scripts/build.ts",
-		"start": "node-ts ./src/bin/start.ts"
+		"build": "node-ts ./scripts/build.js",
+		"start": "node-ts ./src/bin/start.js"
 	},
 	"dependencies": {
 		"applescript-utils": "^0.1.22",

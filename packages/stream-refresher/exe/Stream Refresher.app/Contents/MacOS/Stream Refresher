@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+open "$(dirname "$0")/../Resources/Stream Refresher"
